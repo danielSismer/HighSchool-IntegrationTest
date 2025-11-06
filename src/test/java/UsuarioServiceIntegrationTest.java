@@ -77,4 +77,23 @@ public class UsuarioServiceIntegrationTest {
 
     }
 
+    @Test
+    @DisplayName("Retorna o true se o usuário foi deletado com sucesso!!!")
+    void testDeleteUser() throws SQLException {
+
+        Usuario usuario = new Usuario("Isabelly da Silva Marques", "12", "");
+        boolean verified = usuarioService.delete(usuario);
+        assertNotNull(verified);
+
+    }
+
+    @Test
+    @DisplayName("Retorna um usuário com um ID especificado!!!")
+    void testBuscarPorID() throws SQLException {
+
+        Usuario usuario = new Usuario("Isabelly da Silva Marques", "12", "");
+        usuario = usuarioService.
+
+    }
+
 }

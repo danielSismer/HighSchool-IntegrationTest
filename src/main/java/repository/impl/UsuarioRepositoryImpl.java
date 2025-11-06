@@ -34,4 +34,31 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
         }
         return user;
     }
+
+    @Override
+    public boolean delete(int id) throws SQLException {
+        String command = """
+                DELETE FROM usuario
+                WHERE id = ?
+                """;
+        try(Connection conn = DatabaseConnection.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(command)){
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Usuario searchByID(Usuario u) throws SQLException {
+        String command = """
+                """;
+
+        return u;
+    }
+
+
 }
